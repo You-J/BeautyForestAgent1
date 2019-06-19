@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTray = new System.Windows.Forms.Button();
-            this.nIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.nTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.clsStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료하기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,12 +69,14 @@
             this.btnTray.TabIndex = 2;
             this.btnTray.Text = "▼";
             this.btnTray.UseVisualStyleBackColor = true;
+            this.btnTray.Click += new System.EventHandler(this.BtnTray_Click);
             // 
-            // nIcon
+            // nTray
             // 
-            this.nIcon.ContextMenuStrip = this.clsStrip;
-            this.nIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("nIcon.Icon")));
-            this.nIcon.Text = "notifyIcon1";
+            this.nTray.ContextMenuStrip = this.clsStrip;
+            this.nTray.Icon = ((System.Drawing.Icon)(resources.GetObject("nTray.Icon")));
+            this.nTray.Text = "notifyIcon1";
+            this.nTray.DoubleClick += new System.EventHandler(this.NTray_DoubleClick);
             // 
             // clsStrip
             // 
@@ -89,12 +91,14 @@
             this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
             this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
+            this.폼보이기ToolStripMenuItem.Click += new System.EventHandler(this.폼보이기ToolStripMenuItem_Click);
             // 
             // 종료하기ToolStripMenuItem
             // 
             this.종료하기ToolStripMenuItem.Name = "종료하기ToolStripMenuItem";
             this.종료하기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.종료하기ToolStripMenuItem.Text = "종료하기";
+            this.종료하기ToolStripMenuItem.Click += new System.EventHandler(this.종료하기ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -111,6 +115,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Beauty Forest Agent v0.1 by 3113 이유정";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.clsStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -122,7 +127,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTray;
-        private System.Windows.Forms.NotifyIcon nIcon;
+        private System.Windows.Forms.NotifyIcon nTray;
         private System.Windows.Forms.ContextMenuStrip clsStrip;
         private System.Windows.Forms.ToolStripMenuItem 폼보이기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 종료하기ToolStripMenuItem;
